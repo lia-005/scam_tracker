@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CivicShield AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🛡️ <span>CivicShield AI</span></div>
+    <div class="controls">
+      <label for="language">🌐 Language</label>
+      <select id="language">
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Bengali</option>
+      </select>
+    </div>
+  </header>
+
+  <div id="statusBar" class="status"></div>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Can you trust it? <em>What should you do next?</em></h1>
+      <p>Detect scams, understand government documents, and verify claims against official sources.</p>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="scam">🛡️ Scam Check</button>
+      <button class="tab" data-tab="doc">🏛️ Document Explainer</button>
+      <button class="tab" data-tab="trust">🔐 TrustBridge</button>
+      <button class="tab" data-tab="history">🕘 History</button>
+    </nav>
+
+    <!-- SCAM CHECK -->
+    <section id="tab-scam" class="panel active">
+      <div class="card">
+        <label for="scamInput">Paste the suspicious SMS / WhatsApp / email</label>
+        <textarea id="scamInput" rows="6" placeholder="Pay ₹500 to activate your scholarship immediately..."></textarea>
+        <div class="row">
+          <button id="scamBtn" class="btn primary">Analyze message</button>
+          <button class="btn ghost" data-example="scam">Try an example</button>
+        </div>
+      </div>
+      <div id="scamResult"></div>
+    </section>
+
+    <!-- DOCUMENT EXPLAINER -->
+    <section id="tab-doc" class="panel">
+      <div class="card">
+        <label for="docFile">Upload a government PDF / image / text file</label>
+        <input type="file" id="docFile" accept=".pdf,.png,.jpg,.jpeg,.txt">
+        <div class="row">
+          <button id="docBtn" class="btn primary">Explain document</button>
+        </div>
+        <p class="hint">Scanned files are read with OCR automatically. The document is also reused in the TrustBridge tab.</p>
+      </div>
+      <div id="docResult"></div>
+    </section>
+
+    <!-- TRUSTBRIDGE -->
+    <section id="tab-trust" class="panel">
+      <div class="card">
+        <label for="tbMessage">Suspicious message / claim</label>
+        <textarea id="tbMessage" rows="4" placeholder="Pay ₹500 to activate your scholarship..."></textarea>
+
+        <label>Official document</label>
+        <div class="radio-row">
+          <label><input type="radio" name="tbSrc" value="loaded" checked> Use document from Explainer tab</label>
+          <label><input type="radio" name="tbSrc" value="upload"> Upload a different one</label>
+          <label><input type="radio" name="tbSrc" value="paste"> Paste text</label>
+        </div>
+        <p id="tbLoaded" class="hint"></p>
+        <input type="file" id="tbFile" accept=".pdf,.png,.jpg,.jpeg,.txt" hidden>
+        <textarea id="tbPaste" rows="5" placeholder="Paste the official notice text here..." hidden></textarea>
+
+        <div class="row">
+          <button id="tbBtn" class="btn primary">Verify with TrustBridge</button>
+          <button class="btn ghost" data-example="trust">Try an example</button>
+        </div>
+      </div>
+      <div id="tbResult"></div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="tab-history" class="panel">
+      <div class="card">
+        <div class="row space">
+          <strong>Recent analyses</strong>
+          <button id="clearHistory" class="btn ghost small">Clear history</button>
+        </div>
+        <div id="historyList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    🚨 Cyber fraud helpline <strong id="helpline">1930</strong> · <span id="portal">cybercrime.gov.in</span>
+    <br><small>Decision support only. Always verify on official .gov.in / .nic.in websites.</small>
+  </footer>
+
+  <div id="loader" class="loader" hidden><div class="spinner"></div><span>Analyzing…</span></div>
+  <script src="script.js"></script>
+</body>
+</html>

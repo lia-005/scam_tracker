@@ -1,0 +1,7 @@
+# Scam examples (for testing)
+1) Pay Rs 500 to activate your scholarship immediately at http://scholarship-india.xyz/pay or it will expire today.
+2) URGENT: Your SBI account will be blocked. Update KYC now: bit.ly/sbi-kyc-up and share the OTP you receive.
+3) Congratulations! You have won Rs 25,00,000 in the PM lottery. Send Rs 2,000 processing fee to claim.
+
+# Safe example
+4) Your application for the National Merit Scholarship has been received. Track status at https://scholarships.gov.in. No fee is required.
